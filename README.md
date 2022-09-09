@@ -167,3 +167,24 @@ For Apache:
     ProxyPassReverse http://HOSTNAME:8080/guacamole/
 </Location>
 ```
+
+kali@kali:~$ sudo apt install -y git
+kali@kali:~$
+kali@kali:~$ git clone https://github.com/MysticRyuujin/guac-install.git /tmp/guac-install
+
+kali@kali:~$ sudo rm /etc/localtime
+kali@kali:~$
+kali@kali:~$ sudo ln -s /usr/share/zoneinfo/US/Central /etc/localtime
+
+kali@kali:~$ cd /tmp/guac-install/
+kali@kali:/tmp/guac-install$ sudo ./guac-install.sh --nomfa --installmysql --mysqlpwd S3cur3Pa$$w0rd --guacpwd P@s$W0rD
+
+kali@kali:/tmp/guac-install$ systemctl status tomcat9 guacd mysql
+
+ali@kali:~$ sudo apt install -y tigervnc-standalone-server
+kali@kali:~$
+kali@kali:~$ mkdir -p ~/.vnc/
+kali@kali:~$
+kali@kali:~$ wget https://gitlab.com/kalilinux/nethunter/build-scripts/kali-nethunter-project/-/raw/master/nethunter-fs/profiles/xstartup -O ~/.vnc/xstartup
+kali@kali:~$
+kali@kali:~$ vncserver :1
